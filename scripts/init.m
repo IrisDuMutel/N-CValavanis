@@ -26,30 +26,12 @@ Aw = [Ax 0 0;
       0 0 Az];
 
 %%% PID parameters
+% Are written directly inside model_PID.slx
 
-Kp = 0.0015;
-Kd = 0.09;
-Ki = 0.01;
-% Kp = 10;
-% Kd = 30;
-% Ki = 0;
-
-% PID_pitch.Kp_in = 0.08;
-% PID_pitch.Ki_in = 0.002;
-% PID_pitch.Kd_in = 0.08;
-% 
-% PID_roll.Kp_in = 0.08;
-% PID_roll.Ki_in = 0.002;
-% PID_roll.Kd_in = 0.08;
-% 
-% PID_yaw.Kp_in = 0.15;
-% PID_yaw.Ki_in = 0.0001;
-% PID_yaw.Kd_in = 0.2;
-% 
-% PID_th.Kp = 60;
-% PID_th.Ki = 70;
-% PID_th.Kd = 40;
-
+% PD params for model_SMC.slx
+Kp = 0.5;
+Kd = 2;
+Ki = 0;
 
 %%% State-space representation
 

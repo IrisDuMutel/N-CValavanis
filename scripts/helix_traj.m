@@ -1,6 +1,6 @@
 %% Spiral trajectory generator
 
-a = 9.81/2;
+a = 2;
 t_ref = [];
 vel_refx = [];
 vel_refy = [];
@@ -18,7 +18,7 @@ t_end = 0;
 noPoints = 100;
 
 delta_z = 3;
-ToA = [0, 20];
+ToA = [0, 40];
 ii = 2;
 
 t_ref(end+1:end+noPoints) = linspace(t_end,ToA(ii),noPoints);
@@ -86,11 +86,13 @@ vel_profile_x = vel_ref_temp ./ v_max;
 vel_refx = cos(t_ref)' .* vel_profile_x;
 vel_refy = sin(t_ref)' .* vel_profile_x;
 
-pos_ref = [ zeros(noPoints, 2), pos_refz' ];
-vel_ref = [ vel_refx, vel_refy, vel_refz ];
-% psi = pi / 2 * ones(noPoints, 1);
+psi = t_ref * 2 * pi / 15;
+% pos_ref = [ zeros(noPoints, 2), pos_refz' ];
+% pos_ref = [ 5*cos(psi)' - 5, 5*sin(psi)', pos_refz' ];
+pos_ref = [ 0.5*cos(psi - pi/2)', 0.5*sin(psi - pi/2)' + 0.5, pos_refz' ];
+
 
 %% Computing trajectory for psi
 
-psi = t_ref';
-vel_ref = [ vel_profile_x * 0.1, vel_profile_x * 0, vel_refz ];
+% vel_ref = [ vel_profile_x * 0.5, vel_profile_x * 0, vel_refz ];
+vel_ref = [ 2 * pi / 15 * 1 * ones(noPoints,1), vel_profile_x * 0, vel_refz ];
