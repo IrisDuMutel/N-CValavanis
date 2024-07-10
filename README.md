@@ -20,7 +20,7 @@ To simulate the quadcopter, start by running init.m
 To simulate the linear trajectory:
 
 ```init.m --> linear_traj.m --> model_PID.slx --> plotter.m```
-`
+
 To simulate the helix trajectory:
 
 ```init.m --> helix_traj.m --> model_SMC.slx --> plotter.m```
