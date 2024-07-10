@@ -27,6 +27,13 @@ Aw = [Ax 0 0;
 
 %%% PID parameters
 
+Kp = 0.0015;
+Kd = 0.09;
+Ki = 0.01;
+% Kp = 10;
+% Kd = 30;
+% Ki = 0;
+
 % PID_pitch.Kp_in = 0.08;
 % PID_pitch.Ki_in = 0.002;
 % PID_pitch.Kd_in = 0.08;

@@ -17,7 +17,7 @@ grid on
 xlim([out.ref(1,1)-0.5,out.ref(end,1)+0.5])
 ylim([out.ref(1,2)-0.5,out.ref(end,2)+0.5])
 zlim([out.ref(1,2)-0,out.ref(end,2)+3])
-title('3D trajetory tracking')
+title('3D trajectory tracking')
 legend('Reference','Real')
 
 
@@ -33,7 +33,7 @@ xlabel('X [m]')
 ylabel('Y [m]')
 xlim([out.ref(1,1)-0.5,out.ref(end,1)+0.5])
 ylim([out.ref(1,2)-0.01,out.ref(end,2)+0.01])
-title('2D trajetory tracking')
+title('2D trajectory tracking')
 legend('Reference','Real')
 
 %% State plus reference in subplot structure
@@ -93,6 +93,7 @@ plot(out.time(:,1),out.ref(:,6),'lineWidth',1.5)
 hold on
 plot(out.time(:,1),out.state(:,6),'lineWidth',1.5)
 grid on
+ylim([-10^-3, 10^-3])
 ylabel(['\psi [rad]'])
 
 %%% Figure for Real velocities + references
@@ -103,7 +104,7 @@ hold on
 plot(out.time(:,1),out.state(:,7),'lineWidth',1.5)
 grid on
 ylabel(['u [m/s]'])
-t = title('Velocitiy');
+t = title('Velocity');
 set(t, 'horizontalAlignment', 'center')
 set(t, 'units', 'normalized')
 subplot(3,1,2)
